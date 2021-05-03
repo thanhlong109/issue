@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+</head>
+<body>
+
+        <input  type="text" id="login" placeholder="Enter your username">
+        <input  type="password" id=""style="display: none" type="text" id="password" placeholder="Enter your password">
+        <button type="button" onclick="login()">check</button>
+        <p id="display"></p>
+
+    <script>
+        function login(){
+            let login = document.getElementById("login");
+            let password = document.getElementById("password");
+            let message;
+            let color;
+            if(login.value =="Admin"){
+                password.style.display="block";
+                if(password.value =="TheMaster"){
+                    message = "wellcome!";
+                    color = "green";
+                }
+                else if(password.value == ""){
+                    message = "Canceled!";
+                    color = "blue";
+                }
+                else{
+                    message = "Wrong password!";
+                    color = "red";
+                }
+            }
+            else if(login.value == ""){
+                message = "canceled!";
+                color = "blue";
+            }
+            else {
+                message = "I don’t know you";
+                color = "red";
+            }
+            document.getElementById("display").innerHTML=(message);
+            document.getElementById("display").style.color = color;
+
+        }
+    </script>
+</body>
+</html>
